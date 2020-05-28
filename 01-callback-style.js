@@ -7,8 +7,8 @@ export function getClue(callback) {
         if (request.status < 200 || request.status >= 300) {
             callback(request.status);
         } else {
-            const data = JSON.parse(request.responseText)
-            callback(null, data);
+            const clue = JSON.parse(request.responseText)
+            callback(null, clue);
         };
 
     })
@@ -16,6 +16,3 @@ export function getClue(callback) {
     request.open('GET', 'https://jservice.xyz/api/random-clue');
     request.send();
 }
-
-
-
